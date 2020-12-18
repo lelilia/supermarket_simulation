@@ -8,7 +8,7 @@ class Supermarket():
 	manages multiple Customer instances that are currently in the market.
 	'''
 
-	def __init__(self, adding_prob=0.6):
+	def __init__(self, adding_prob=0.02):
 		self.customers = []
 		self.cashiers = []
 		self.minutes = 0
