@@ -26,6 +26,8 @@ class SupermarketMap():
             return self.tiles[7 * 32 : 8 * 32, 3 * 32 : 4 * 32]
         elif char == "C":
             return self.tiles[2 * 32 : 3 * 32, 8 * 32 : 9 * 32]
+        elif char == '0':
+            return self.tiles[8 * 32 : 9 * 32, 9 * 32 : 10 * 32]
         else:
             return self.tiles[32:64, 64:96]
 

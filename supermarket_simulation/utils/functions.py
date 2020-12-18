@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 
+
 TILES = cv2.imread("./graphics/tiles.png")
 
 def build_grid(market):
@@ -24,3 +25,15 @@ def walkable(grid_array: list) -> list:
             if cell == 0:
                 walkable.append((i, j))
     return walkable
+
+def build_large_grid(market, tile_size):
+    grid = []
+    for m in market.split('\n'):
+        new_line = [0 if t in '.G' else 1 for t in m]
+        new_line = list(np.repeat(new_line, tile_size))
+        for _ in range(tile_size):
+            grid.append(new_line)
+    return grid
+
+if __name__ == '__main__':
+    print(build_large_grid("AAA\nA..\n...", 4))

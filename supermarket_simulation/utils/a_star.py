@@ -102,8 +102,7 @@ def find_path(start, target, grid_array=GRID, p_moves=POSSIBLE_MOVES, walkable_l
 
         if current_node.location == target_node.location:
             shortest_path = get_path_from_target(current_node)
-            turning_points = get_turning_points_from_path(shortest_path)
-            return turning_points
+            return shortest_path
 
         frontier = create_neighbours(p_moves, current_node, target_node, grid_array, frontier, walkable_list)
 

@@ -1,6 +1,7 @@
 import cv2
+from random import randint
 
-from supermarket_simulation.utils.functions import build_grid, walkable, TILES
+from supermarket_simulation.utils.functions import build_grid, walkable, TILES, build_large_grid
 
 ITEMS = [
 	'toiletpaper',
@@ -54,3 +55,8 @@ POSSIBLE_MOVES = [(-1, 0), (0, -1), (0, 1), (1, 0)]
 GRID = build_grid(MARKET)
 
 WALKABLE_LIST = walkable(GRID)
+
+LARGE_GRID = build_large_grid(MARKET, TILE_SIZE)
+LARGE_WALKABLE_LIST = walkable(LARGE_GRID)
+
+SHOPPING_LIST = ['spices'] * randint(1,2) + ['fruit'] * randint(0,2) + ['drinks'] * randint(0, 2) + ['dairy'] * randint(0,2)
