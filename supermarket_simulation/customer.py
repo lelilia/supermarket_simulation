@@ -9,7 +9,7 @@ class Customer:
     def __init__(self, customer_id):
         self.id = customer_id
         self.state = 'entry'
-        self.shopping_list = ['spices'] * randint(0,5) + ['fruit'] * randint(0,5) + ['drinks'] * randint(0, 5) + ['dairy'] * randint(0,5)
+        self.shopping_list = ['spices'] * randint(1,2) + ['fruit'] * randint(0,2) + ['drinks'] * randint(0, 2) + ['dairy'] * randint(0,2)
 
         # ['fruit', 'spices', 'drinks']
         self.last_state = None
