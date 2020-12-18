@@ -11,20 +11,23 @@ class Supermarket():
 	def __init__(self, adding_prob=0.02):
 		self.customers = []
 		self.cashiers = []
-		self.minutes = 0
+		self.time = 0
 		self.last_customer_id = 0
 		self.adding_prob = adding_prob
 
 
 	def __repr__(self):
-		return f'<Market {self.minutes}: {len(self.customers)} customers in the store >'
+		return f'<Market {self.time}: {len(self.customers)} customers in the store >'
 
 	def print_supermarket(self):
 		for customer in self.customers:
 			print(customer)
 
-	def get_time():
-		...
+	def get_time(self):
+		time = self.time // 30
+		hour = time // 60 + 7
+		minute = time % 60
+		return f'{str(hour).zfill(2)}:{str(minute).zfill(2)}'
 
 	def add_new_customer(self):
 		if random() < self.adding_prob:
@@ -48,7 +51,7 @@ class Supermarket():
 
 	def next_minute(self):
 		self.add_new_customer()
-		self.minutes += 1
+		self.time += 1
 		for customer in self.customers:
 			customer.move()
 		self.remove_customers()
