@@ -9,7 +9,7 @@ class Customer:
     def __init__(self, customer_id):
         self.id = customer_id
         self.state = 'entry'
-        self.shopping_list = ['spices'] #+ ['fruit'] * randint(0,2) + ['drinks'] * randint(0, 2) + ['dairy'] * randint(0,2)
+        self.shopping_list = ['spices'] + ['fruit'] * randint(0,2) + ['drinks'] * randint(0, 2) + ['dairy'] * randint(0,2)
         self.x = STATE_LOCATION[self.state][0][0]
         self.y = STATE_LOCATION[self.state][0][1]
         self.v = 4

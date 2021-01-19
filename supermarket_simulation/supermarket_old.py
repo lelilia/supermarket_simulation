@@ -106,18 +106,18 @@ class Supermarket():
 				# 		checkout.add_customer(customer)
 			if self.can_customer_move(customer):
 				customer.move()
-			else:
-				# look for a new path
-				occupied_space = customer.path[0]
-				target_location = customer.path[-1]
-				if occupied_space != target_location:
-					# find new path else wait
-					walkable_list = WALKABLE_LIST.copy()
-					walkable_list.remove(occupied_space)
+			# else:
+			# 	# look for a new path
+			# 	occupied_space = customer.path[0]
+			# 	target_location = customer.path[-1]
+			# 	if occupied_space != target_location:
+			# 		# find new path else wait
+			# 		walkable_list = WALKABLE_LIST.copy()
+			# 		walkable_list.remove(occupied_space)
 
-					new_path= find_path((customer.x, customer.y), target_location, walkable_list=walkable_list)
-					if new_path:
-						customer.path = new_path
+			# 		new_path= find_path((customer.x, customer.y), target_location, walkable_list=walkable_list)
+			# 		if new_path:
+			# 			customer.path = new_path
 
 		self.remove_customers()
 		for checkout in self.checkouts:
